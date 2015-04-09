@@ -4,8 +4,9 @@ MAINTAINER Ryan French <rfrench@lic.co.nz>
 ENV RUBY_MAJOR 2.1
 ENV RUBY_VERSION 2.1.4
 
-RUN apt-get update && apt-get install -y libpq-dev curl procps postgresql-client-common postgresql-client-9.3 beanstalkd \
-  autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev ruby \
+RUN apt-get update && apt-get install -y libpq-dev curl procps \
+  autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev \
+  libncurses5-dev libffi-dev libgdbm3 libgdbm-dev ruby \
   && rm -rf /var/lib/apt/lists/* \
   && mkdir -p /usr/src/ruby \
   && curl -SL "http://cache.ruby-lang.org/pub/ruby/$RUBY_MAJOR/ruby-$RUBY_VERSION.tar.bz2" \
